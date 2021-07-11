@@ -40,10 +40,17 @@
     out of the box on hover (remove perspective if you don't want the 3D effect */
     .flip-card {
         background-color: transparent;
-        width: 450px;
-        height: 300px;
+        width: 300px;
+        height: 200px;
         perspective: 1000px;
         /* Remove this if you don't want the 3D effect */
+    }
+
+    @media all and (min-width: 768px) {
+        .flip-card {
+            width: 450px;
+            height: 300px;
+        }
     }
 
     /* This container is needed to position the front and back side */
