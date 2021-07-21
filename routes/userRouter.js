@@ -155,7 +155,7 @@ router.delete('/card/:id/:cardId', async (req, res) => {
                 }
             }
         });
-        req.session.user = { id: user._id };
+        req.session.user = { id: req.params.id };
         return res.status(200).json({ message: 'Card Deleted Successfully' })
     } catch (err) {
         res.status(500).json({ message: err.message });

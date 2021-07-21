@@ -19,6 +19,17 @@
         });   
     }
     
+    const deleteCard = id => {
+        fetch('http://localhost:3000/card/' + localStorage.getItem('id') + '/' + id, {
+            method: 'DELETE',
+            credentials: 'include',
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert(data.message);
+            window.location.reload();
+        });
+    }
     // Return Card Layout
     // const getCardLayout = cardLayout => {
     //     if (cardLayout == 'CardLayout1')
@@ -77,6 +88,7 @@
                             textColor2={card.textColor2}
                             textColor3={card.textColor3}
                         />
+                        <button on:click={() => { deleteCard(card._id) }} type="button">Delete Card</button>
                     </article>
                 {/each}
             {/if}
